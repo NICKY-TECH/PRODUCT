@@ -17,7 +17,7 @@ body.container {
 
 .container {
   width: 100%;
-@apply m-auto;
+@apply sm:m-auto;
 }
 
 main {

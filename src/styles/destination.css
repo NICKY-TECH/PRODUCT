@@ -877,7 +877,13 @@ body.container {
 
 .container {
   width: 100%;
-  margin: auto;
+}
+
+@media (min-width: 640px){
+
+  .container{
+    margin: auto;
+  }
 }
 
 main{
