@@ -13,14 +13,15 @@
 html,
 body.container {
   height: 100%;
+  @apply flex;
 }
 
 .container {
-  @apply flex justify-center items-center;
+  @apply m-auto;
 }
 
 main {
-  @apply grid grid-rows-1 font-tina gap-20 max-[639px]:m-auto;
+  @apply grid grid-rows-1 font-tina gap-20;
   width: 97%;
 }
 
