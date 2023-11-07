@@ -13,17 +13,18 @@
 html,
 body.container {
   height: 100%;
+  background-color: black;
 
 }
 
 .container {
   @apply m-auto;
-  /* background-color: pink; */
+  background-color: pink;
 }
 
 main {
   @apply grid grid-rows-1 font-tina gap-20 h-full;
-  /* background-color: brown; */
+  background-color: brown;
 }
 
 .body-over-lay {
