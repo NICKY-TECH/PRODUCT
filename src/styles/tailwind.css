@@ -18,6 +18,8 @@ body.container {
 .container {
   width: 100%;
   @apply m-auto;
+  position: relative;
+  z-index: 0;
   /* background-color: pink; */
 }
 
