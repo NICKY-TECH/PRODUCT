@@ -878,13 +878,12 @@ video {
 html,
 body.container {
   height: 100%;
-  overflow: hidden;
-  background-color: red;
+
 }
 
 .container{
   margin: auto;
-  background-color: pink;
+  /* background-color: pink; */
 }
 
 main{
