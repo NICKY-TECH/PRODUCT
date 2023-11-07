@@ -15,12 +15,18 @@ body.container {
   height: 100%;
 }
 
+.container {
+  width: 100%;
+@apply m-auto;
+}
+
 main {
-  @apply grid grid-rows-1 w-10/12 m-auto font-tina gap-20;
+  @apply grid grid-rows-1 font-tina gap-20;
+  width: 97%;
 }
 
 .body-over-lay {
-  @apply  flex justify-center;
+  @apply flex justify-center;
   background-color: hsl(0, 0%, 0%, 0.6);
   width: 100%;
   height: 100%;
@@ -58,29 +64,31 @@ header {
 }
 
 .main-body {
-  @apply row-span-1 grid max-[639px]:grid-rows-2 sm:grid-cols-4 w-11/12 m-auto sm:gap-44;
+  @apply row-span-1 grid max-[639px]:grid-rows-2 sm:grid-cols-2 w-11/12 sm:space-x-9 lg:space-x-40;
   /* background-color: tomato; */
 }
 
 .logo-set {
-  @apply flex justify-center items-center gap-8;
+  @apply flex space-x-5 items-center;
 }
 
-.logo {
+/* .logo {
   @apply gap-4;
-}
+} */
 
 .cart-set {
-  @apply flex items-center gap-5;
+  @apply flex items-center space-x-4;
 }
 
 nav ul {
-  @apply flex gap-4;
+  @apply flex space-x-5;
+  
 }
 
 nav ul li {
-  @apply list-none hover:pb-3;
+  @apply list-none;
   font-weight: 400;
+  font-size: 1.2rem;
   color: hsl(0, 0%, 58%);
 }
 
@@ -100,7 +108,7 @@ nav ul li:hover {
 }
 
 .image-set-main-body {
-  @apply max-[639px]:row-span-1 sm:col-span-2 flex flex-col gap-5;
+  @apply max-[639px]:row-span-1 sm:col-span-1 flex flex-col gap-5;
 }
 
 .image-set-main-body-overlay {
@@ -147,7 +155,7 @@ main .image-set-main-body .image-controls {
 }
 
 .sub-images {
-  @apply flex  gap-3 hover:cursor-pointer;
+  @apply flex gap-3 hover:cursor-pointer;
   /* background-color:violet; */
 }
 /* 
@@ -161,7 +169,8 @@ main .image-set-main-body .image-controls {
 } */
 
 .sub-images div img {
-  border-radius: 15px;
+  @apply rounded-lg
+  /* border-radius: 15px; */;
 }
 
 .sub-image {
@@ -186,7 +195,7 @@ main .image-set-main-body .image-controls {
 }
 
 .set-cart {
-  @apply max-[639px]:row-span-1 sm:col-span-2 flex items-center justify-center;
+  @apply max-[639px]:row-span-1 sm:col-span-1 flex items-center justify-center;
   /* background-color: wheat; */
 }
 
@@ -197,7 +206,7 @@ main .image-set-main-body .image-controls {
 
 h1 {
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
 }
 
 .text-content {
@@ -247,7 +256,6 @@ h1 {
   @apply max-[639px]:py-3 flex gap-5 items-center rounded  px-4 justify-center;
   background-color: hsl(223, 64%, 95%);
 }
-
 
 .buttons {
   @apply flex max-[639px]:flex-col gap-4 rounded;

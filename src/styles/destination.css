@@ -540,6 +540,9 @@ video {
 .relative{
   position: relative;
 }
+.col-span-1{
+  grid-column: span 1 / span 1;
+}
 .col-span-2{
   grid-column: span 2 / span 2;
 }
@@ -555,6 +558,10 @@ video {
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+.my-auto{
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .-ml-2{
   margin-left: -0.5rem;
@@ -637,9 +644,6 @@ video {
 .w-10{
   width: 2.5rem;
 }
-.w-10\/12{
-  width: 83.333333%;
-}
 .w-11{
   width: 2.75rem;
 }
@@ -678,6 +682,9 @@ video {
 }
 .list-none{
   list-style-type: none;
+}
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .grid-cols-4{
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -733,8 +740,26 @@ video {
 .gap-8{
   gap: 2rem;
 }
+.space-x-10 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-5 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-9 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(2.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .rounded{
   border-radius: 0.25rem;
+}
+.rounded-lg{
+  border-radius: 0.5rem;
 }
 .border{
   border-width: 1px;
@@ -850,13 +875,17 @@ body.container {
   height: 100%;
 }
 
-main{
+.container {
+  width: 100%;
   margin: auto;
+}
+
+main{
   display: grid;
-  width: 83.333333%;
   grid-template-rows: repeat(1, minmax(0, 1fr));
   gap: 5rem;
   font-family: Kumbh Sans;
+  width: 97%;
 }
 
 .body-over-lay{
@@ -918,7 +947,6 @@ header{
 
 .main-body{
   grid-row: span 1 / span 1;
-  margin: auto;
   display: grid;
   width: 91.666667%;
 }
@@ -933,8 +961,22 @@ header{
 @media (min-width: 640px){
 
   .main-body{
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 11rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .main-body > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.25rem * var(--tw-space-x-reverse));
+    margin-left: calc(2.25rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
+@media (min-width: 1024px){
+
+  .main-body > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0;
+    margin-right: calc(10rem * var(--tw-space-x-reverse));
+    margin-left: calc(10rem * calc(1 - var(--tw-space-x-reverse)));
   }
 }
 
@@ -945,35 +987,43 @@ header{
 .logo-set{
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
 }
 
-.logo{
-  gap: 1rem;
+.logo-set > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
+
+/* .logo {
+  @apply gap-4;
+} */
 
 .cart-set{
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+}
+
+.cart-set > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 nav ul{
   display: flex;
-  gap: 1rem;
+}
+
+nav ul > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 nav ul li{
   list-style-type: none;
-}
-
-nav ul li:hover{
-  padding-bottom: 0.75rem;
-}
-
-nav ul li {
   font-weight: 400;
+  font-size: 1.2rem;
   color: hsl(0, 0%, 58%);
 }
 
@@ -1011,7 +1061,7 @@ nav ul li:hover {
 @media (min-width: 640px){
 
   .image-set-main-body{
-    grid-column: span 2 / span 2;
+    grid-column: span 1 / span 1;
   }
 }
 
@@ -1129,8 +1179,8 @@ nav ul li:hover {
   background-color: wheat;
 } */
 
-.sub-images div img {
-  border-radius: 15px;
+.sub-images div img{
+  border-radius: 0.5rem;
 }
 
 .sub-image {
@@ -1170,7 +1220,7 @@ nav ul li:hover {
 @media (min-width: 640px){
 
   .set-cart{
-    grid-column: span 2 / span 2;
+    grid-column: span 1 / span 1;
   }
 }
 
@@ -1186,7 +1236,7 @@ nav ul li:hover {
 
 h1 {
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
 }
 
 .text-content {
@@ -1282,13 +1332,11 @@ h1 {
   background-color: hsl(223, 64%, 95%);
 }
 
-
 .buttons{
   display: flex;
   gap: 1rem;
   border-radius: 0.25rem;
 }
-
 
 @media (max-width: 639px){
 
@@ -1391,8 +1439,8 @@ h1 {
 
 @media (min-width: 640px){
 
-  .sm\:col-span-2{
-    grid-column: span 2 / span 2;
+  .sm\:col-span-1{
+    grid-column: span 1 / span 1;
   }
 
   .sm\:hidden{
@@ -1403,11 +1451,17 @@ h1 {
     width: 58.333333%;
   }
 
-  .sm\:grid-cols-4{
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .sm\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:justify-center{
     justify-content: center;
+  }
+
+  .sm\:space-x-9 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.25rem * var(--tw-space-x-reverse));
+    margin-left: calc(2.25rem * calc(1 - var(--tw-space-x-reverse)));
   }
 }

@@ -7,7 +7,6 @@ import im1 from "../images/image-product-1.jpg";
 import "../styles/destination.css";
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { func } from "joi";
 
 function Image(props) {
   const disptach = useDispatch();
