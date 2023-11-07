@@ -81,7 +81,6 @@ header {
 
 .cart-set {
   @apply flex items-center space-x-4;
-  background-color: brown;
 }
 
 nav ul {
@@ -200,7 +199,7 @@ main .image-set-main-body .image-controls {
 
 .set-cart {
   @apply max-[639px]:row-span-1 sm:col-span-1 flex items-center justify-center;
-background-color: blueviolet;
+  /* background-color: wheat; */
 }
 
 .inner-set-cart {

@@ -1024,10 +1024,6 @@ header{
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.cart-set {
-  background-color: brown;
-}
-
 nav ul{
   display: flex;
 }
@@ -1247,7 +1243,7 @@ nav ul li:hover {
 }
 
 .set-cart {
-background-color: blueviolet;
+  /* background-color: wheat; */
 }
 
 .inner-set-cart{
