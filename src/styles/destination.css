@@ -1291,6 +1291,13 @@ h1 {
   flex-direction: column;
 }
 
+@media (max-width: 639px){
+
+  .group-prices{
+    display: flex;
+  }
+}
+
 .original-price{
   text-decoration-line: line-through;
   color: hsl(0, 0%, 58%);
@@ -1435,6 +1442,10 @@ h1 {
 
   .max-\[639px\]\:ml-4{
     margin-left: 1rem;
+  }
+
+  .max-\[639px\]\:flex{
+    display: flex;
   }
 
   .max-\[639px\]\:w-11\/12{
