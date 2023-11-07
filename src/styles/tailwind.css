@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Blinker:wght@600&family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Kumbh+Sans:wght@400;700&family=Lato:ital,wght@1,300&family=League+Spartan:wght@500;600;700&family=Manrope:wght@400;500&family=Open+Sans:wght@400;700&family=Outfit:wght@400;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700;1,800&family=Roboto:ital,wght@0,500;1,400&family=Rubik:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body.container {
+  height: 100%;
+}
+
+main {
+  @apply grid grid-rows-1 w-10/12 m-auto font-tina gap-20;
+}
+
+.body-over-lay {
+  @apply  flex justify-center;
+  background-color: hsl(0, 0%, 0%, 0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.cart-list {
+  position: absolute;
+  top: 90px;
+  left: auto;
+  right: 20px;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  @apply rounded bg-white w-1/4 mx-auto grid grid-rows-3;
+}
+
+.cart-title {
+  @apply py-4 px-2 row-span-1;
+  font-weight: 700;
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+  /* background-color: blueviolet */
+}
+
+.cart-content {
+  @apply flex justify-center items-center row-span-2;
+  /* background-color: pink; */
+}
+
+header {
+  @apply row-span-1 flex justify-between py-4;
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+  /* background-color: chartreuse; */
+}
+
+.main-body {
+  @apply row-span-1 grid max-[639px]:grid-rows-2 sm:grid-cols-4 w-11/12 m-auto sm:gap-44;
+  /* background-color: tomato; */
+}
+
+.logo-set {
+  @apply flex justify-center items-center gap-8;
+}
+
+.logo {
+  @apply gap-4;
+}
+
+.cart-set {
+  @apply flex items-center gap-5;
+}
+
+nav ul {
+  @apply flex gap-4;
+}
+
+nav ul li {
+  @apply list-none hover:pb-3;
+  font-weight: 400;
+  color: hsl(0, 0%, 58%);
+}
+
+nav ul li:hover {
+  border-bottom: 3px solid hsl(26, 100%, 55%);
+}
+
+.avatar {
+  @apply hover:cursor-pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.cart {
+  width: 50px;
+  height: 40px;
+}
+
+.image-set-main-body {
+  @apply max-[639px]:row-span-1 sm:col-span-2 flex flex-col gap-5;
+}
+
+.image-set-main-body-overlay {
+  @apply col-span-2 flex flex-col gap-5 max-[639px]:w-11/12 sm:w-7/12;
+}
+
+.full-image-view {
+  @apply flex flex-col justify-center items-center;
+  position: relative;
+  z-index: 0;
+}
+
+.image-component {
+  @apply flex flex-col gap-5;
+}
+
+main .image-set-main-body .image-controls {
+  @apply sm:hidden;
+}
+
+.image-controls {
+  @apply w-full flex justify-between;
+  position: absolute;
+  z-index: 1;
+}
+
+.next {
+  @apply -mr-5 bg-white flex justify-center items-center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.previous {
+  @apply -ml-5 bg-white flex sm:justify-center items-center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.full-image-view img {
+  @apply hover:cursor-pointer;
+  border-radius: 20px;
+}
+
+.sub-images {
+  @apply flex  gap-3 hover:cursor-pointer;
+  /* background-color:violet; */
+}
+/* 
+.sub-images div{
+ width: 200px;
+ height: 100px;
+} */
+
+/* .sub-images div{
+  background-color: wheat;
+} */
+
+.sub-images div img {
+  border-radius: 15px;
+}
+
+.sub-image {
+  position: relative;
+}
+
+.sub-image:hover .over-lay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+  border: 3px solid hsl(26, 100%, 55%);
+  border-radius: 15px;
+  background-color: hsl(0, 0%, 90%, 0.5);
+}
+
+.sneaker-company {
+  @apply uppercase;
+  color: hsl(26, 100%, 55%);
+  font-weight: 700;
+}
+
+.set-cart {
+  @apply max-[639px]:row-span-1 sm:col-span-2 flex items-center justify-center;
+  /* background-color: wheat; */
+}
+
+.inner-set-cart {
+  @apply h-4/5 w-full;
+  /* background-color: steelblue; */
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.text-content {
+  color: hsl(0, 0%, 58%);
+}
+
+.price {
+  @apply flex gap-5 items-center mx-auto;
+}
+
+.current-price {
+  @apply flex gap-4;
+  font-weight: 700;
+}
+
+.current-price-value {
+  font-size: 1.4rem;
+}
+
+.discount {
+  @apply p-1 rounded;
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+}
+
+.group-prices {
+  @apply flex flex-col;
+}
+
+.original-price {
+  @apply line-through;
+  color: hsl(0, 0%, 58%);
+}
+
+.add-to-cart {
+  @apply max-[639px]:py-3 text-white flex gap-5 items-center rounded  justify-center py-2 px-3;
+  background-color: hsl(26, 100%, 55%);
+  font-weight: 700;
+}
+
+.add-to-cart:hover {
+  cursor: pointer;
+  background-color: hsla(26, 100%, 55%, 0.6);
+}
+
+.control {
+  @apply max-[639px]:py-3 flex gap-5 items-center rounded  px-4 justify-center;
+  background-color: hsl(223, 64%, 95%);
+}
+
+
+.buttons {
+  @apply flex max-[639px]:flex-col gap-4 rounded;
+}
+
+/* .minus,
+.plus {
+  @apply font-bold;
+  color: hsl(26, 100%, 55%);
+}
+
+.minus:hover,
+.plus:hover{
+  color: red;
+} */
+
+.active-picture {
+  outline: 3px solid hsl(26, 100%, 55%);
+  outline-offset: 5px;
+  background-color: aquamarine;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-picture {
+  @apply hover:cursor-pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.cart {
+  @apply hover:cursor-pointer;
+}
+
+.close {
+  @apply flex justify-end hover:cursor-pointer;
+}
+
+.overlay-content {
+  @apply sm:w-7/12 flex justify-center items-center;
+}
