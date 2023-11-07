@@ -22,7 +22,7 @@ body.container {
 }
 
 main {
-  @apply grid grid-rows-1 font-tina gap-20;
+  @apply grid grid-rows-1 font-tina gap-20 h-full;
   /* background-color: brown; */
 }
 
