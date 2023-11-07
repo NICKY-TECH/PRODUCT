@@ -13,16 +13,17 @@
 html,
 body.container {
   height: 100%;
-  @apply flex justify-center;
 }
 
 .container {
   width: 100%;
   @apply m-auto;
+  /* background-color: pink; */
 }
 
 main {
   @apply grid grid-rows-1 font-tina gap-20;
+  /* background-color: brown; */
   width: 97%;
 }
 
@@ -65,8 +66,8 @@ header {
 }
 
 .main-body {
-  @apply row-span-1 grid max-[639px]:grid-rows-2 sm:grid-cols-2 w-11/12 sm:space-x-9 lg:space-x-40;
-  /* background-color: tomato; */
+  @apply row-span-1 grid max-[639px]:grid-rows-2 sm:grid-cols-2 w-11/12 sm:space-x-9 lg:space-x-40 m-auto;
+  /* background-color: black; */
 }
 
 .logo-set {
