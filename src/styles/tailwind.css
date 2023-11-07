@@ -17,7 +17,6 @@ body.container {
 }
 
 .container {
-  width: 100%;
   @apply m-auto;
   /* background-color: pink; */
 }
@@ -25,7 +24,6 @@ body.container {
 main {
   @apply grid grid-rows-1 font-tina gap-20;
   /* background-color: brown; */
-  width: 100%;
 }
 
 .body-over-lay {
@@ -35,6 +33,7 @@ main {
   height: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 1;
 }
 
