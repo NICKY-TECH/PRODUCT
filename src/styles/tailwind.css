@@ -236,7 +236,7 @@ h1 {
 }
 
 .group-prices {
-  @apply flex max-[639px]:flex-row flex-col;
+  @apply flex max-[639px]:flex-row sm:flex-col;
 }
 
 .original-price {
