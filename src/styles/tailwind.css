@@ -25,7 +25,7 @@ body.container {
 main {
   @apply grid grid-rows-1 font-tina gap-20;
   /* background-color: brown; */
-  width: 97%;
+  width: 100%;
 }
 
 .body-over-lay {
