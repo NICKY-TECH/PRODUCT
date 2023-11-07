@@ -17,11 +17,11 @@ body.container {
 
 .container {
   width: 100%;
-@apply sm:m-auto;
+@apply m-auto;
 }
 
 main {
-  @apply grid grid-rows-1 font-tina gap-20;
+  @apply grid grid-rows-1 font-tina gap-20 max-[639px]:m-auto;
   width: 97%;
 }
 
@@ -143,7 +143,7 @@ main .image-set-main-body .image-controls {
 }
 
 .previous {
-  @apply sm:-ml-5 bg-white flex sm:justify-center items-center;
+  @apply -ml-5 bg-white flex sm:justify-center items-center;
   width: 50px;
   height: 50px;
   border-radius: 50%;
