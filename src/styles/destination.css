@@ -1288,13 +1288,19 @@ h1 {
 
 .group-prices{
   display: flex;
-  flex-direction: column;
 }
 
 @media (max-width: 639px){
 
   .group-prices{
-    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 640px){
+
+  .group-prices{
+    flex-direction: column;
   }
 }
 
@@ -1444,16 +1450,16 @@ h1 {
     margin-left: 1rem;
   }
 
-  .max-\[639px\]\:flex{
-    display: flex;
-  }
-
   .max-\[639px\]\:w-11\/12{
     width: 91.666667%;
   }
 
   .max-\[639px\]\:grid-rows-2{
     grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .max-\[639px\]\:flex-row{
+    flex-direction: row;
   }
 
   .max-\[639px\]\:flex-col{
