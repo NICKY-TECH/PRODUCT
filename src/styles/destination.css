@@ -698,6 +698,9 @@ video {
 .grid-rows-3{
   grid-template-rows: repeat(3, minmax(0, 1fr));
 }
+.flex-row{
+  flex-direction: row;
+}
 .flex-col{
   flex-direction: column;
 }
@@ -1294,6 +1297,7 @@ h1 {
 
   .group-prices{
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -1464,6 +1468,10 @@ h1 {
 
   .max-\[639px\]\:flex-col{
     flex-direction: column;
+  }
+
+  .max-\[639px\]\:justify-between{
+    justify-content: space-between;
   }
 
   .max-\[639px\]\:py-3{
