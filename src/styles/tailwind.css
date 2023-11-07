@@ -14,19 +14,16 @@ html,
 body{
   height: 100%;
   width: 100%;
-  background-color: black;
 
 }
 
 .container {
   @apply m-auto;
-  height: 100%;
-  background-color: pink;
+  height: 100%
 }
 
 main {
   @apply grid grid-rows-1 font-tina gap-20 h-full w-full;
-  background-color: brown;
 }
 
 .body-over-lay {
@@ -84,6 +81,7 @@ header {
 
 .cart-set {
   @apply flex items-center space-x-4;
+  background-color: brown;
 }
 
 nav ul {
