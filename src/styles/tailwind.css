@@ -13,10 +13,11 @@
 html,
 body.container {
   height: 100%;
-  @apply flex;
+  @apply flex justify-center;
 }
 
 .container {
+  width: 100%;
   @apply m-auto;
 }
 

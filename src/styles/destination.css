@@ -874,9 +874,11 @@ html,
 body.container {
   height: 100%;
   display: flex;
+  justify-content: center;
 }
 
-.container{
+.container {
+  width: 100%;
   margin: auto;
 }
 
