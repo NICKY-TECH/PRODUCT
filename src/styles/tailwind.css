@@ -15,11 +15,6 @@ body.container {
   height: 100%;
 }
 
-.container {
-  width: 100%;
-@apply m-auto;
-}
-
 main {
   @apply grid grid-rows-1 font-tina gap-20 max-[639px]:m-auto;
   width: 97%;
