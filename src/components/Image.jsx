@@ -1,21 +1,15 @@
 import { changeOverLayState } from "../feature/over-lay";
 import { thumbnail } from "../data/data";
 import { useDispatch } from "react-redux";
-import next from "../images/icon-next.svg";
-import previous from "../images/icon-previous.svg";
-import im1 from "../images/image-product-1.jpg";
 import "../styles/destination.css";
-import { useSelector } from "react-redux";
 import { useState } from "react";
 
 function Image(props) {
   const disptach = useDispatch();
-  const overlay = useSelector((state) => state.overlay.value);
   const [show, setShow] = useState({
     pic: thumbnail[0].parents,
     id: thumbnail[0].index,
   });
-  const [count, setCount] = useState(0);
 
   function display(id) {
     setShow(id);
