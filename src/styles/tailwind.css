@@ -13,6 +13,7 @@
 html,
 body{
   height: 100%;
+  width: 100%;
   background-color: black;
 
 }
@@ -24,7 +25,7 @@ body{
 }
 
 main {
-  @apply grid grid-rows-1 font-tina gap-20 h-full;
+  @apply grid grid-rows-1 font-tina gap-20 h-full w-full;
   background-color: brown;
 }
 
