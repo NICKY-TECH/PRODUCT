@@ -336,7 +336,7 @@ h1 {
 }
 
 .ham {
-  @apply max-[639px]:flex sm:hidden;
+  @apply max-[639px]:flex sm:hidden ml-2;
 }
 
 .side-bar {
