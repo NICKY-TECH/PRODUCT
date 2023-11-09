@@ -11,15 +11,16 @@
 }
 
 html,
-body{
+body {
   height: 100%;
   width: 100%;
-
+  scroll-behavior: smooth;
 }
 
 .container {
-  @apply m-auto;
-  height: 100%
+  @apply m-auto font-tina;
+  position: relative;
+  height: 100%;
 }
 
 main {
@@ -27,7 +28,6 @@ main {
 }
 
 .body-over-lay {
-  @apply flex justify-center;
   background-color: hsl(0, 0%, 0%, 0.6);
   width: 100%;
   height: 100%;
@@ -37,6 +37,10 @@ main {
   z-index: 1;
 }
 
+.body-overlay-inner {
+  @apply flex justify-center w-full h-full;
+}
+
 .cart-list {
   position: absolute;
   top: 90px;
@@ -44,18 +48,32 @@ main {
   right: 20px;
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  @apply rounded bg-white w-1/4 mx-auto grid grid-rows-3;
+  @apply rounded bg-white w-2/6 mx-auto max-[639px]:hidden grid-rows-2 sm:grid sm:grid-rows-3;
 }
 
+.small {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 97%;
+  height: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  @apply rounded bg-white mx-auto max-[639px]:grid max-[639px]:row-span-1 grid-rows-3 sm:hidden;
+}
+.body-over-lay .small {
+  @apply hidden;
+}
 .cart-title {
-  @apply py-4 px-2 row-span-1;
+  @apply py-4 px-2 max-[639px]:row-span-1 sm:row-span-1;
   font-weight: 700;
   border-bottom: 1px solid hsl(0, 0%, 90%);
   /* background-color: blueviolet */
 }
 
 .cart-content {
-  @apply flex justify-center items-center row-span-2;
+  @apply flex max-[639px]:row-span-1  justify-center items-center max-[639px]:row-span-1 sm:row-span-2;
   /* background-color: pink; */
 }
 
@@ -66,36 +84,45 @@ header {
 }
 
 .main-body {
-  @apply row-span-1 grid max-[639px]:grid-rows-2 sm:grid-cols-2 w-11/12 sm:space-x-9 lg:space-x-40 m-auto;
+  @apply row-span-1 grid max-[639px]:grid-rows-1 sm:grid-cols-2 w-11/12 max-[639px]:space-y-2 sm:space-x-9 lg:space-x-40 m-auto;
   /* background-color: black; */
 }
 
 .logo-set {
-  @apply flex space-x-5 items-center;
+  @apply flex sm:space-x-5 items-center;
   /* background-color: aqua; */
 }
-
-/* .logo {
-  @apply gap-4;
-} */
+.logo {
+  @apply max-[639px]:ml-2;
+}
 
 .cart-set {
   @apply flex items-center space-x-4;
 }
 
-nav ul {
+.nav-nav ul {
   @apply flex space-x-5;
   /* background-color: blueviolet; */
 }
 
-nav ul li {
+.nav-aside ul {
+  @apply flex flex-col space-y-5;
+}
+.nav-aside ul li {
+  @apply list-none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 0%);
+}
+
+.nav-nav ul li {
   @apply list-none;
   font-weight: 400;
   font-size: 1.2rem;
   color: hsl(0, 0%, 58%);
 }
 
-nav ul li:hover {
+.nav-nav ul li:hover {
   border-bottom: 3px solid hsl(26, 100%, 55%);
 }
 
@@ -191,6 +218,10 @@ main .image-set-main-body .image-controls {
   background-color: hsl(0, 0%, 90%, 0.5);
 }
 
+header nav {
+  @apply max-[639px]:hidden sm:flex;
+}
+
 .sneaker-company {
   @apply uppercase;
   color: hsl(26, 100%, 55%);
@@ -203,7 +234,7 @@ main .image-set-main-body .image-controls {
 }
 
 .inner-set-cart {
-  @apply h-4/5 w-full;
+  @apply h-4/5 w-full space-y-9 max-[639px]:-mt-20;
   /* background-color: steelblue; */
 }
 
@@ -213,6 +244,7 @@ h1 {
 }
 
 .text-content {
+  @apply max-[639px]:text-xl text-xs;
   color: hsl(0, 0%, 58%);
 }
 
@@ -236,7 +268,7 @@ h1 {
 }
 
 .group-prices {
-  @apply flex max-[639px]:flex-row max-[639px]:justify-between sm:flex-col;
+  @apply flex max-[639px]:flex-row max-[639px]:justify-between sm:flex-col w-full;
 }
 
 .original-price {
@@ -245,7 +277,7 @@ h1 {
 }
 
 .add-to-cart {
-  @apply max-[639px]:py-3 text-white flex gap-5 items-center rounded  justify-center py-2 px-3;
+  @apply max-[639px]:py-8 text-white flex gap-5 items-center rounded  justify-center py-2 px-3;
   background-color: hsl(26, 100%, 55%);
   font-weight: 700;
 }
@@ -256,7 +288,7 @@ h1 {
 }
 
 .control {
-  @apply max-[639px]:py-3 flex gap-5 items-center rounded  px-4 justify-center;
+  @apply max-[639px]:py-8 flex gap-5 items-center rounded  px-4 justify-between;
   background-color: hsl(223, 64%, 95%);
 }
 
@@ -264,16 +296,16 @@ h1 {
   @apply flex max-[639px]:flex-col gap-4 rounded;
 }
 
-/* .minus,
+/* minus,
 .plus {
   @apply font-bold;
   color: hsl(26, 100%, 55%);
-}
-
-.minus:hover,
-.plus:hover{
-  color: red;
 } */
+
+/* .minus:hover,
+.plus:hover{
+  color: hsla(26, 100%, 80%) ;
+}  */
 
 .active-picture {
   outline: 3px solid hsl(26, 100%, 55%);
@@ -301,4 +333,18 @@ h1 {
 
 .overlay-content {
   @apply sm:w-7/12 flex justify-center items-center;
+}
+
+.ham {
+  @apply max-[639px]:flex sm:hidden;
+}
+
+.side-bar {
+  @apply bg-white flex flex-col w-5/12 h-full pl-4 pt-4 space-y-10 sm:hidden;
+}
+
+@media (max-width: 639px) {
+  .cart-title {
+    font-size: 1.7rem;
+  }
 }

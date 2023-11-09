@@ -1,6 +1,4 @@
 import "../styles/destination.css";
-import minus from "../images/icon-minus.svg";
-import plus from "../images/icon-plus.svg";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useState } from "react";
 import Image from "./Image";
@@ -29,11 +27,13 @@ function Body() {
       </article>
       <article className="set-cart">
         <div className="inner-set-cart">
-          <p className="sneaker-company">Sneaker Company</p>
+       <div>
+       <p className="sneaker-company">Sneaker Company</p>
           <h1>
             Fall Limited Edition <br />
             Sneakers
           </h1>
+       </div>
           <p className="text-content">
             {" "}
             These low-profile sneakers are your perfect casual wear companion.
@@ -52,11 +52,11 @@ function Body() {
               </div>
             </div>
           </div>
-          <div className="buttons">
+          <div className="group buttons">
             <button className="control">
-              <img src={minus} className="minus" onClick={decrement} />{" "}
+            <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" onClick={decrement}><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use className="fill-[#FF7E1B] group-hover:fill-[#FFBF00FF]" fillRule="nonzero" xlinkHref="#a"/></svg>
               <span>{amount}</span>
-              <img src={plus} className="plus" onClick={increment} />
+              <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" onClick={increment} ><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use className="fill-[#FF7E1B] group-hover:fill-[#FFBF00FF]"  fillRule="nonzero" xlinkHref="#b"/></svg>
             </button>
             <button className="add-to-cart">
               <AiOutlineShoppingCart /> Add to cart

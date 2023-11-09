@@ -1,8 +1,8 @@
 import "../styles/destination.css"
 
-function Cart() {
+function Cart(props) {
   return (
-    <article className="cart-list">
+    <article className={props.class}>
       <div className="cart-title">
         <p>Cart</p>
       </div>

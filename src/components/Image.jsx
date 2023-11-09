@@ -1,11 +1,15 @@
 import { changeOverLayState } from "../feature/over-lay";
+import { layContentState } from "../feature/lay-content";
 import { thumbnail } from "../data/data";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import "../styles/destination.css";
+import Cart from "./Cart";
 import { useState } from "react";
 
 function Image(props) {
-  const disptach = useDispatch();
+  const dispatch = useDispatch();
+  const cart = useSelector((state)=>state.displayCart.value)
   const [show, setShow] = useState({
     pic: thumbnail[0].parents,
     id: thumbnail[0].index,
@@ -59,11 +63,11 @@ setShow({
         <img
           src={show.pic}
           onClick={() => {
-            disptach(changeOverLayState());
+            dispatch(changeOverLayState(true));
+            dispatch(layContentState(false))
           }}
-        />{" "}
+        />
         <div className="image-controls">
-          {" "}
           <div className="group previous cursor-pointer" onClick={prev}>
           <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"  className='cursor-pointer max-[639px]:ml-4 group-hover:stroke-[#ff7d1a] stroke-[#000000]'><path d="M11 1 3 9l8 8" fill="none"  strokeWidth="3" fillRule="evenodd"/></svg>
           </div>
@@ -71,6 +75,7 @@ setShow({
           <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg" className='cursor-pointer group-hover:stroke-[#ff7d1a] stroke-[#000000]'><path d="m2 1 8 8-8 8" strokeWidth="3" fill="none" fillRule="evenodd"/></svg>
           </div>
         </div>
+        {cart? <Cart class="small"/>:''}
       </div>
 
       <div className="sub-images">

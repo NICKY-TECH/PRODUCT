@@ -4,11 +4,11 @@ export const overLaySlice = createSlice({
   name: "overlayeffect",
   initialState: { value: false },
   reducers: {
-    changeOverLayState: (state) => {
-     return {
+    changeOverLayState: (state,action) => {
+      return {
         ...state,
-        value: !state.value
-     }
+        value: action.payload,
+      };
     },
   },
 });
