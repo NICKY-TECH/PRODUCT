@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { changeOverLayState } from "./feature/over-lay";
 import Navigation from "./components/Navigation";
 import Cart from './components/Cart';
+import { setCart } from "./feature/cart";
 
 function App() {
   const overlay = useSelector((state) => state.overlay.value);
@@ -44,7 +45,9 @@ function App() {
         ""
       )}
       {
-      set? <div className="cart-overlay">
+      set? <div className="cart-overlay" onClick={()=>{
+        disptach(setCart(false))
+      }}>
       <Cart class="cart-list"/>
       </div>:""
       }

@@ -49,7 +49,7 @@ main {
   right: 20px;
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  @apply rounded bg-white w-max pb-4 mx-auto flex flex-col max-[639px]:pb-24;
+  @apply rounded bg-white w-max pb-2 mx-auto flex flex-col max-[639px]:pb-24;
 }
 
 .cart-overlay{
@@ -83,7 +83,7 @@ main {
 }
 
 .cart-content {
-  @apply flex flex-col items-center space-y-3 space-x-2;
+  @apply flex flex-col items-center space-y-3 space-x-2 pt-3;
   /* background-color: pink; */
 }
 
