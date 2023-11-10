@@ -5,13 +5,19 @@ import { useDispatch } from "react-redux";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { layContentState } from "../feature/lay-content";
 import avatar from "../images/image-avatar.png";
+import { useSelector } from "react-redux";
 import { setCart } from "../feature/cart";
 import { changeOverLayState } from "../feature/over-lay";
 import Navigation from "./Navigation";
+import { onCartState } from "../feature/onCart";
 
 function Header() {
   const dispatch = useDispatch();
+  const totalNumber = useSelector((state) => state.total.value);
+  const showOnCart = useSelector((state) => state.onCart.value);
   const [active, setActive] = useState(false);
+  console.log("show on cart")
+  console.log(showOnCart)
   function activate() {
     setActive(!active);
   }
@@ -47,8 +53,9 @@ function Header() {
           className="cart"
           onClick={() => {
             dispatch(setCart());
-          }}
-        />
+            dispatch(onCartState(false))
+          }}/>
+     {showOnCart?<span className="cart-total">{totalNumber}</span>:""}
         <div
           className={active ? "active-picture" : "profile-picture"}
           onClick={activate}

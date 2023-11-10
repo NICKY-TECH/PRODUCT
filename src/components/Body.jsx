@@ -1,30 +1,52 @@
 import "../styles/destination.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useState } from "react";
 import Image from "./Image";
 import useSound from "use-sound";
+import { useDispatch } from "react-redux";
+import { amountState } from "../feature/amount";
+import { useSelector } from "react-redux";
 import sound from "../resource/audio/announcement-sound-4-21464.mp3";
+import { onCartState } from "../feature/onCart";
+import { v4 as uuidv4 } from 'uuid';
 
 function Body() {
+  const dispatch = useDispatch();
+  const totalNumber = useSelector((state) => state.total.value);
   const [playSound] = useSound(sound);
-  const [amount, setAmount] = useState(0);
+  function play (){
+    playSound()
+  }
   function increment() {
-    setAmount((amount) => {
-      return amount + 1;
-    });
+    dispatch(amountState(totalNumber + 1));
   }
 
-  function decrement() {
-    if (amount > 0) {
-      setAmount((amount) => {
-        return amount - 1;
-      });
-    } else if (amount === 0) {
-      setAmount(0);
-    }
+  let arr =[...Array(1)]
+
+  function displayCart(){
+    dispatch(onCartState(true))
+  arr.map(()=>{
+    let index=uuidv4();
+       localStorage.setItem(`${index}`,JSON.stringify({
+  title:'Fall Limited Edition Sneakers',
+  id:`${index}`,
+  total:`${totalNumber}`
+  })
+       )
+    
   }
-  function play() {
-    playSound();
+
+)
+ 
+    window.scrollTo(0,0)
+  
+}
+
+  function decrement() {
+    if (totalNumber > 0) {
+      dispatch(amountState(totalNumber - 1));
+    } else if (totalNumber === 0) {
+      dispatch(amountState(0));
+    }
   }
   return (
     <article className="main-body">
@@ -79,7 +101,7 @@ function Body() {
                   xlinkHref="#a"
                 />
               </svg>
-              <span>{amount}</span>
+              <span>{totalNumber}</span>
               <svg
                 width="12"
                 height="12"
@@ -101,7 +123,13 @@ function Body() {
               </svg>
             </button>
             {/* <span className="total">{amount}</span> */}
-            <button className="add-to-cart" onClick={play}>
+            <button
+              className="add-to-cart"
+              onClick={()=>{
+                displayCart;
+                play
+              }}
+            >
               <AiOutlineShoppingCart /> Add to cart
             </button>
           </div>
