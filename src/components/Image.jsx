@@ -1,6 +1,6 @@
 import { changeOverLayState } from "../feature/over-lay";
 import { layContentState } from "../feature/lay-content";
-import { thumbnail } from "../data/data";
+import { thumbnail } from "../resource/data";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import "../styles/destination.css";
@@ -75,9 +75,7 @@ setShow({
           <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg" className='cursor-pointer group-hover:stroke-[#ff7d1a] stroke-[#000000]'><path d="m2 1 8 8-8 8" strokeWidth="3" fill="none" fillRule="evenodd"/></svg>
           </div>
         </div>
-        {cart? <Cart class="small"/>:''}
       </div>
-
       <div className="sub-images">
         {thumbnail.map((item) => {
           return (

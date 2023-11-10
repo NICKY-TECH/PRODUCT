@@ -4,17 +4,15 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { changeOverLayState } from "./feature/over-lay";
 import Navigation from "./components/Navigation";
+import Cart from './components/Cart';
 
 function App() {
   const overlay = useSelector((state) => state.overlay.value);
   const show = useSelector((state) => state.cont.value);
+  const set =useSelector((state)=>state.displayCart.value)
   const disptach = useDispatch();
-  {
-    console.log("value-show");
-  }
-  {
-    console.log(show);
-  }
+  {console.log("set")}
+  {console.log(set)}
   return (
     <div className="container">
       <Main />
@@ -45,6 +43,13 @@ function App() {
       ) : (
         ""
       )}
+      {
+      set? <div className="cart-overlay">
+      <Cart class="cart-list"/>
+      </div>:""
+      }
+      {console.log("set")}
+      {console.log(set)}
     </div>
   );
 }

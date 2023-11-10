@@ -2,19 +2,16 @@ import "../styles/destination.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { layContentState } from "../feature/lay-content";
 import avatar from "../images/image-avatar.png"
 import { setCart } from "../feature/cart";
-import Cart from "./Cart";
 import { changeOverLayState } from "../feature/over-lay";
 import Navigation from "./Navigation";
 
 
 function Header() {
   const dispatch = useDispatch();
-  const cart = useSelector((state)=>state.displayCart.value)
 const [active,setActive]=useState(false)
   function activate (){
 setActive(!active)
@@ -37,12 +34,10 @@ setActive(!active)
    <AiOutlineShoppingCart className="cart" onClick={()=>{
     dispatch(setCart())
    }}/>
-   {console.log(active)}
       <div className={active?"active-picture":"profile-picture"} onClick={activate}>
         <img src={avatar} className="avatar"/>
       </div>
    </div>
-   {cart? <Cart class="cart-list"/>:''}
     </header>
   );
 }

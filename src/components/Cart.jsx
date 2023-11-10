@@ -1,4 +1,5 @@
 import "../styles/destination.css"
+import Item from "./Item";
 
 function Cart(props) {
   return (
@@ -6,9 +7,12 @@ function Cart(props) {
       <div className="cart-title">
         <p>Cart</p>
       </div>
-      <div className="cart-content">
-        <p className="empty">Your cart is empty</p>
-      </div>
+      <article className="cart-content">
+        <Item/>
+        <Item/>
+        <button className="check-out">Checkout</button>
+    
+      </article>
     </article>
   );
 }

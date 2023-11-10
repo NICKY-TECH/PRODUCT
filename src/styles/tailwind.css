@@ -37,19 +37,30 @@ main {
   z-index: 1;
 }
 
+
 .body-overlay-inner {
   @apply flex justify-center w-full h-full;
 }
 
 .cart-list {
   position: absolute;
-  top: 90px;
+  top: 1px;
   left: auto;
   right: 20px;
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  @apply rounded bg-white w-2/6 mx-auto max-[639px]:hidden grid-rows-2 sm:grid sm:grid-rows-3;
+  @apply rounded bg-white w-max pb-4 mx-auto flex flex-col max-[639px]:pb-24;
 }
+
+.cart-overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 1; 
+}
+
 
 .small {
   position: absolute;
@@ -58,9 +69,8 @@ main {
   right: 0;
   z-index: 1;
   width: 97%;
-  height: 80%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  @apply rounded bg-white mx-auto max-[639px]:grid max-[639px]:row-span-1 grid-rows-3 sm:hidden;
+  @apply rounded bg-white mx-auto flex pb-10 flex-col sm:hidden h-auto;
 }
 .body-over-lay .small {
   @apply hidden;
@@ -73,7 +83,7 @@ main {
 }
 
 .cart-content {
-  @apply flex max-[639px]:row-span-1  justify-center items-center max-[639px]:row-span-1 sm:row-span-2;
+  @apply flex flex-col items-center space-y-3 space-x-2;
   /* background-color: pink; */
 }
 
@@ -186,6 +196,7 @@ main .image-set-main-body .image-controls {
 
 .sub-images {
   @apply flex gap-3 hover:cursor-pointer;
+  z-index: 0;
   /* background-color:violet; */
 }
 /* 
@@ -277,8 +288,10 @@ h1 {
 }
 
 .add-to-cart {
-  @apply max-[639px]:py-8 text-white flex gap-5 items-center rounded  justify-center py-2 px-3;
+  @apply max-[639px]:py-8 text-white flex gap-5 items-center rounded  justify-center py-3 px-3;
   background-color: hsl(26, 100%, 55%);
+  position: relative;
+  z-index: 1;
   font-weight: 700;
 }
 
@@ -288,7 +301,7 @@ h1 {
 }
 
 .control {
-  @apply max-[639px]:py-8 flex gap-5 items-center rounded  px-4 justify-between;
+  @apply max-[639px]:py-8 flex gap-5 items-center rounded py-4 px-4 justify-between;
   background-color: hsl(223, 64%, 95%);
 }
 
@@ -308,6 +321,7 @@ h1 {
 }  */
 
 .active-picture {
+  @apply mr-2;
   outline: 3px solid hsl(26, 100%, 55%);
   outline-offset: 5px;
   background-color: aquamarine;
@@ -318,7 +332,7 @@ h1 {
 }
 
 .profile-picture {
-  @apply hover:cursor-pointer;
+  @apply hover:cursor-pointer mr-2;
   width: 50px;
   height: 50px;
 }
@@ -343,8 +357,94 @@ h1 {
   @apply bg-white flex flex-col w-5/12 h-full pl-4 pt-4 space-y-10 sm:hidden;
 }
 
+.total {
+  @apply text-white text-center rounded-full pb-1;
+  background-color: hsl(26, 100%, 55%);
+  width: 50px;
+  height: 20px;
+}
+
+.cart-item {
+  @apply flex h-min w-11/12 space-x-2 items-center;
+  color: hsl(0, 0%, 58%);
+  /* background-color: aqua; */
+}
+
+.item-image {
+  height: 4rem;
+  background-color: blueviolet;
+  border-radius: none;
+}
+
+.item-price{
+  @apply flex space-x-1
+}
+
+.final-price{
+  @apply text-black;
+  font-weight: 700;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%; /* Add this line to ensure the whole image is visible */ /* Maintain aspect ratio and fit the entire image */
+}
+
+.check-out{
+  @apply text-white w-11/12 p-4 rounded hover:cursor-pointer;
+  font-weight: 700;
+  background-color: hsl(26, 100%, 55%);
+}
+
+.check-out:hover{
+  cursor: pointer;
+  background-color: hsla(26, 100%, 55%,0.6);
+}
+
+.trash{
+  @apply hover:cursor-pointer;
+}
+
+
+@media (max-width:262px){
+  
+  .cart-list {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0px;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    @apply rounded bg-white mx-auto flex flex-col;
+    width: 87%;
+  }
+
+  .cart-overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    z-index: 1; 
+  }
+}
+
+
 @media (max-width: 639px) {
   .cart-title {
     font-size: 1.7rem;
   }
+
+  .cart-list {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0px;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    @apply rounded bg-white mx-auto flex flex-col;
+    width: 87%;
+  }
+
 }
+

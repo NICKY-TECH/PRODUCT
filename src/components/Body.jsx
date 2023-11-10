@@ -2,8 +2,11 @@ import "../styles/destination.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useState } from "react";
 import Image from "./Image";
+import useSound from "use-sound";
+import sound from "../resource/audio/announcement-sound-4-21464.mp3";
 
 function Body() {
+  const [playSound] = useSound(sound);
   const [amount, setAmount] = useState(0);
   function increment() {
     setAmount((amount) => {
@@ -20,6 +23,9 @@ function Body() {
       setAmount(0);
     }
   }
+  function play() {
+    playSound();
+  }
   return (
     <article className="main-body">
       <article className="image-set-main-body">
@@ -27,13 +33,13 @@ function Body() {
       </article>
       <article className="set-cart">
         <div className="inner-set-cart">
-       <div>
-       <p className="sneaker-company">Sneaker Company</p>
-          <h1>
-            Fall Limited Edition <br />
-            Sneakers
-          </h1>
-       </div>
+          <div>
+            <p className="sneaker-company">Sneaker Company</p>
+            <h1>
+              Fall Limited Edition <br />
+              Sneakers
+            </h1>
+          </div>
           <p className="text-content">
             {" "}
             These low-profile sneakers are your perfect casual wear companion.
@@ -54,11 +60,48 @@ function Body() {
           </div>
           <div className="group buttons">
             <button className="control">
-            <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" onClick={decrement}><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use className="fill-[#FF7E1B] group-hover:fill-[#FFBF00FF]" fillRule="nonzero" xlinkHref="#a"/></svg>
+              <svg
+                width="12"
+                height="4"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                onClick={decrement}
+              >
+                <defs>
+                  <path
+                    d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                    id="a"
+                  />
+                </defs>
+                <use
+                  className="fill-[#FF7E1B] group-hover:fill-[#FFBF00FF]"
+                  fillRule="nonzero"
+                  xlinkHref="#a"
+                />
+              </svg>
               <span>{amount}</span>
-              <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" onClick={increment} ><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use className="fill-[#FF7E1B] group-hover:fill-[#FFBF00FF]"  fillRule="nonzero" xlinkHref="#b"/></svg>
+              <svg
+                width="12"
+                height="12"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                onClick={increment}
+              >
+                <defs>
+                  <path
+                    d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                    id="b"
+                  />
+                </defs>
+                <use
+                  className="fill-[#FF7E1B] group-hover:fill-[#FFBF00FF]"
+                  fillRule="nonzero"
+                  xlinkHref="#b"
+                />
+              </svg>
             </button>
-            <button className="add-to-cart">
+            {/* <span className="total">{amount}</span> */}
+            <button className="add-to-cart" onClick={play}>
               <AiOutlineShoppingCart /> Add to cart
             </button>
           </div>
