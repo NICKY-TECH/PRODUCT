@@ -43,7 +43,7 @@ localStorageArray.map(item => {
 
         <button className="check-out" onClick={()=>{
           checkOut(),
-          play()
+         
         }}>Checkout</button>
     
       </article>
