@@ -596,6 +596,9 @@ video {
 .mr-10{
   margin-right: 2.5rem;
 }
+.mr-2{
+  margin-right: 0.5rem;
+}
 .mr-20{
   margin-right: 5rem;
 }
@@ -808,6 +811,11 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.75rem * var(--tw-space-x-reverse));
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .space-x-40 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
@@ -1181,9 +1189,7 @@ header{
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
-  padding-bottom: 1rem;
   border-bottom: 1px solid hsl(0, 0%, 90%);
-  /* background-color: chartreuse; */
 }
 
 .main-body{
@@ -1235,7 +1241,6 @@ header{
 
 .logo-set{
   display: flex;
-  align-items: center;
 }
 
 @media (min-width: 640px){
@@ -1259,7 +1264,6 @@ header{
 
 .cart-set{
   display: flex;
-  align-items: center;
 }
 
 .cart-set > :not([hidden]) ~ :not([hidden]){
@@ -1303,10 +1307,26 @@ header{
   color: hsl(0, 0%, 0%);
 }
 
+.nav-nav {
+  height: 100%;
+}
+
+/* 
+.border-span {
+  @apply self-end w-full;
+  border-bottom: 3px solid hsl(26, 100%, 55%);
+} */
+
+.nav-nav ul{
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 100%;
+}
+
 .nav-nav ul li{
   list-style-type: none;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: hsl(0, 0%, 58%);
 }
 
@@ -1314,13 +1334,23 @@ header{
   border-bottom: 3px solid hsl(26, 100%, 55%);
 }
 
-.avatar:hover{
+.avatar {
+  width: 32px;
+  height: 32px;
+}
+
+
+.active-avatar:hover{
   cursor: pointer;
 }
 
-.avatar {
-  width: 50px;
-  height: 50px;
+
+.active-avatar {
+  outline: 3px solid hsl(26, 100%, 55%);
+  border-radius: 50%;
+  outline-offset: 2px;
+  width: 32px;
+  height: 32px;
 }
 
 .cart {
@@ -1484,14 +1514,14 @@ header{
 
 @media (max-width: 639px){
 
-  header nav{
+  header .nav-nav{
     display: none;
   }
 }
 
 @media (min-width: 640px){
 
-  header nav{
+  header .nav-nav{
     display: flex;
   }
 }
@@ -1697,9 +1727,6 @@ h1 {
 
 .active-picture{
   margin-right: 0.5rem;
-  outline: 3px solid hsl(26, 100%, 55%);
-  outline-offset: 5px;
-  background-color: aquamarine;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1708,6 +1735,7 @@ h1 {
 
 .profile-picture{
   margin-right: 0.5rem;
+  display: flex;
 }
 
 .profile-picture:hover{
@@ -1721,6 +1749,11 @@ h1 {
 
 .cart:hover{
   cursor: pointer;
+}
+
+.cart {
+  height: 30px;
+  width:45%;
 }
 
 .close{
@@ -1820,7 +1853,6 @@ h1 {
   /* background-color: aqua; */
 }
 
-
 .hide{
   display: flex;
   display: none;
@@ -1830,19 +1862,16 @@ h1 {
   align-items: center;
 }
 
-
 .hide > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-
-.hide{
+.hide {
   color: hsl(0, 0%, 58%);
   /* background-color: aqua; */
 }
-
 
 .item-image {
   height: 4rem;
@@ -2128,12 +2157,6 @@ h1 {
 
   .sm\:justify-center{
     justify-content: center;
-  }
-
-  .sm\:space-x-5 > :not([hidden]) ~ :not([hidden]){
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1.25rem * var(--tw-space-x-reverse));
-    margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .sm\:space-x-9 > :not([hidden]) ~ :not([hidden]){

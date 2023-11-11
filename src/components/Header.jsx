@@ -25,7 +25,7 @@ function Header() {
       <div className="logo-set">
         <GiHamburgerMenu
           className="ham"
-          style={{ width: "20%", height: "35px" }}
+          style={{ width: "15%", height: "25px" }}
           onClick={() => {
             dispatch(changeOverLayState(true));
             dispatch(layContentState(true));
@@ -55,10 +55,10 @@ function Header() {
           }}/>
      {showOnCart?<span className="cart-total">{totalNumber}</span>:""}
         <div
-          className={active ? "active-picture" : "profile-picture"}
+          className= "profile-picture"
           onClick={activate}
         >
-          <img src={avatar} className="avatar" />
+          <img src={avatar} className={active?"active-avatar":"avatar"} />
         </div>
       </div>
     </header>

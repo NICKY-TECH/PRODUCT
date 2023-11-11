@@ -86,9 +86,8 @@ main {
 }
 
 header {
-  @apply row-span-1 flex justify-between py-4;
+  @apply row-span-1 flex justify-between pt-4;
   border-bottom: 1px solid hsl(0, 0%, 90%);
-  /* background-color: chartreuse; */
 }
 
 .main-body {
@@ -97,7 +96,7 @@ header {
 }
 
 .logo-set {
-  @apply flex sm:space-x-5 items-center;
+  @apply flex sm:space-x-5;
   /* background-color: aqua; */
 }
 .logo {
@@ -105,7 +104,7 @@ header {
 }
 
 .cart-set {
-  @apply flex items-center space-x-4;
+  @apply flex space-x-4;
   position: relative;
 }
 
@@ -124,10 +123,24 @@ header {
   color: hsl(0, 0%, 0%);
 }
 
+.nav-nav {
+  height: 100%;
+}
+
+/* 
+.border-span {
+  @apply self-end w-full;
+  border-bottom: 3px solid hsl(26, 100%, 55%);
+} */
+
+.nav-nav ul{
+  @apply h-full my-auto;
+}
+
 .nav-nav ul li {
   @apply list-none;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: hsl(0, 0%, 58%);
 }
 
@@ -136,9 +149,18 @@ header {
 }
 
 .avatar {
+  width: 32px;
+  height: 32px;
+}
+
+
+.active-avatar {
   @apply hover:cursor-pointer;
-  width: 50px;
-  height: 50px;
+  outline: 3px solid hsl(26, 100%, 55%);
+  border-radius: 50%;
+  outline-offset: 2px;
+  width: 32px;
+  height: 32px;
 }
 
 .cart {
@@ -228,7 +250,7 @@ main .image-set-main-body .image-controls {
   background-color: hsl(0, 0%, 90%, 0.5);
 }
 
-header nav {
+header .nav-nav {
   @apply max-[639px]:hidden sm:flex;
 }
 
@@ -321,9 +343,6 @@ h1 {
 
 .active-picture {
   @apply mr-2;
-  outline: 3px solid hsl(26, 100%, 55%);
-  outline-offset: 5px;
-  background-color: aquamarine;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -331,13 +350,15 @@ h1 {
 }
 
 .profile-picture {
-  @apply hover:cursor-pointer mr-2;
+  @apply hover:cursor-pointer mr-2 flex ;
   width: 50px;
   height: 50px;
 }
 
 .cart {
   @apply hover:cursor-pointer;
+  height: 30px;
+  width:45%;
 }
 
 .close {
@@ -369,13 +390,11 @@ h1 {
   /* background-color: aqua; */
 }
 
-
-.hide{
+.hide {
   @apply flex h-min w-11/12 space-x-2 items-center hidden;
   color: hsl(0, 0%, 58%);
   /* background-color: aqua; */
 }
-
 
 .item-image {
   height: 4rem;
@@ -438,7 +457,7 @@ h1 {
   @apply rounded bg-white pb-2 mx-auto flex flex-col max-[639px]:pb-24;
 }
 
-.footer-link{
+.footer-link {
   @apply text-blue-700;
 }
 
