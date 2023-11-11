@@ -79,7 +79,7 @@ setShow({
       <div className="sub-images">
         {thumbnail.map((item) => {
           return (
-            <>
+            < div key={item.id}>
               {props.isOverlay === "yes" ? (
                 <div
                   className="sub-image"
@@ -98,7 +98,7 @@ setShow({
                   <div className="over-lay"></div>
                 </div>
               )}
-            </>
+            </div>
           );
         })}
       </div>

@@ -13,8 +13,6 @@ function Cart(props) {
   const localStorageArray = Array.from({ length: localStorage.length }, (_, index) => {
     const key = localStorage.key(index);
     const value = localStorage.getItem(key);
-    console.log("value-top")
-    console.log(value)
     const parsedValue = JSON.parse(value);
     return { key, parsedValue };
   });
@@ -34,8 +32,6 @@ function Cart(props) {
  
 localStorageArray.map(item => {
   // Perform mapping operations here
-  {console.log("value dey")}
-  {console.log(item)}
   return <Item title={item.parsedValue.title} key={item.parsedValue.id} number={item.parsedValue.total} id={item.parsedValue.id} sound={playSound}/>
 }):<p className="cart-empty">Your cart is empty </p>
 }

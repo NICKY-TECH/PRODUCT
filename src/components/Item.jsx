@@ -1,13 +1,16 @@
 import "../styles/destination.css";
 import im9 from "../images/image-product-1-thumbnail.jpg";
 import {FaTrashAlt} from "react-icons/fa";
-import { useSelector } from "react-redux";
+import useSound from "use-sound";
+import sound from "../resource/audio/announcement-sound-4-21464.mp3";
+// import { useSelector } from "react-redux";
 
 function Item (props){
-  const totalNumber = useSelector((state) => state.total.value);
-  let value =  typeof(totalNumber)==="number";
+  // const totalNumber = useSelector((state) => state.total.value);
+  const [playSound] = useSound(sound);
 function deleteItem(id){
-  localStorage.removeItem(id)
+  localStorage.removeItem(id);
+  playSound()
 
 }
 
@@ -22,8 +25,6 @@ function deleteItem(id){
     <FaTrashAlt className="trash" onClick={()=>{
       deleteItem(props.id)
     }}/>
-    {console.log("avvhpr")}
-{console.log(value)}
     </article>
 
 }

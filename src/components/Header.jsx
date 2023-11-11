@@ -16,8 +16,6 @@ function Header() {
   const totalNumber = useSelector((state) => state.total.value);
   const showOnCart = useSelector((state) => state.onCart.value);
   const [active, setActive] = useState(false);
-  console.log("show on cart")
-  console.log(showOnCart)
   function activate() {
     setActive(!active);
   }

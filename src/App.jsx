@@ -12,8 +12,6 @@ function App() {
   const show = useSelector((state) => state.cont.value);
   const set =useSelector((state)=>state.displayCart.value)
   const disptach = useDispatch();
-  {console.log("set")}
-  {console.log(set)}
   return (
     <div className="container">
       <Main />
@@ -51,8 +49,7 @@ function App() {
       <Cart class="cart-list"/>
       </div>:""
       }
-      {console.log("set")}
-      {console.log(set)}
+  
     </div>
   );
 }

@@ -1045,7 +1045,6 @@ main{
   height: 100%;
   width: 100%;
   grid-template-rows: repeat(1, minmax(0, 1fr));
-  gap: 5rem;
   font-family: Kumbh Sans;
 }
 
@@ -1188,6 +1187,7 @@ header{
   margin: auto;
   display: grid;
   width: 91.666667%;
+  padding-top: 1.25rem;
 }
 
 @media (max-width: 639px){
@@ -1633,8 +1633,8 @@ h1 {
 @media (max-width: 639px){
 
   .add-to-cart{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -1665,8 +1665,8 @@ h1 {
 @media (max-width: 639px){
 
   .control{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -2087,9 +2087,9 @@ h1 {
     margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
   }
 
-  .max-\[639px\]\:py-8{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  .max-\[639px\]\:py-4{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .max-\[639px\]\:text-xl{
