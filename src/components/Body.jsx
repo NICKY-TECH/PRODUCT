@@ -24,18 +24,20 @@ function Body() {
 
   function displayCart(){
     dispatch(onCartState(true))
-  arr.map(()=>{
-    let index=uuidv4();
-       localStorage.setItem(`${index}`,JSON.stringify({
-  title:'Fall Limited Edition Sneakers',
-  id:`${index}`,
-  total:`${totalNumber}`
-  })
-       )
-    
-  }
+if(totalNumber!=0){
+arr.map(()=>{
+  let index=uuidv4();
+     localStorage.setItem(`${index}`,JSON.stringify({
+title:'Fall Limited Edition Sneakers',
+id:`${index}`,
+total:`${totalNumber}`
+})
+     )
+  
+}
 
 )
+}
  
     window.scrollTo(0,0)
   

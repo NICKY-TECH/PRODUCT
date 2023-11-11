@@ -369,6 +369,14 @@ h1 {
   /* background-color: aqua; */
 }
 
+
+.hide{
+  @apply flex h-min w-11/12 space-x-2 items-center hidden;
+  color: hsl(0, 0%, 58%);
+  /* background-color: aqua; */
+}
+
+
 .item-image {
   height: 4rem;
   background-color: blueviolet;

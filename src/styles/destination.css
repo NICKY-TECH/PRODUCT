@@ -1823,6 +1823,30 @@ h1 {
   /* background-color: aqua; */
 }
 
+
+.hide{
+  display: flex;
+  display: none;
+  height: -moz-min-content;
+  height: min-content;
+  width: 91.666667%;
+  align-items: center;
+}
+
+
+.hide > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+
+.hide{
+  color: hsl(0, 0%, 58%);
+  /* background-color: aqua; */
+}
+
+
 .item-image {
   height: 4rem;
   background-color: blueviolet;
