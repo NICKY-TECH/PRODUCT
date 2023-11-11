@@ -8,6 +8,7 @@ import cart from "./feature/cart.js";
 import total from "./feature/amount.js";
 import contents from "./feature/lay-content.js";
 import onCart from "./feature/onCart.js";
+import active from "./feature/active.js";
 
 const store = configureStore({
   reducer: {
@@ -15,7 +16,9 @@ const store = configureStore({
     displayCart: cart,
     cont: contents,
     total,
-    onCart
+    onCart,
+    active
+
   },
 });
 
