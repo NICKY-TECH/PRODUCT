@@ -2,14 +2,14 @@ import { changeOverLayState } from "../feature/over-lay";
 import { layContentState } from "../feature/lay-content";
 import { thumbnail } from "../resource/data";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "../styles/destination.css";
-import Cart from "./Cart";
 import { useState } from "react";
 
 function Image(props) {
   const dispatch = useDispatch();
-  const cart = useSelector((state)=>state.displayCart.value)
+  // const cart = useSelector((state)=>state.displayCart.value)
   const [show, setShow] = useState({
     pic: thumbnail[0].parents,
     id: thumbnail[0].index,
@@ -60,7 +60,7 @@ setShow({
   return (
     <div className="image-component">
       <div className="full-image-view">
-        <img
+        <LazyLoadImage
           src={show.pic}
           onClick={() => {
             dispatch(changeOverLayState(true));
