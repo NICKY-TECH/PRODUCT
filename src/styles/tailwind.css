@@ -276,7 +276,7 @@ h1 {
 }
 
 .text-content {
-  @apply max-[639px]:text-xl text-xs;
+  @apply max-[639px]:text-lg text-base;
   color: hsl(0, 0%, 58%);
 }
 

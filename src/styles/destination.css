@@ -988,6 +988,10 @@ video {
 .font-tina{
   font-family: Kumbh Sans;
 }
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1577,14 +1581,14 @@ h1 {
 }
 
 .text-content{
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 @media (max-width: 639px){
 
   .text-content{
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 }
@@ -2123,8 +2127,8 @@ h1 {
     padding-bottom: 1rem;
   }
 
-  .max-\[639px\]\:text-xl{
-    font-size: 1.25rem;
+  .max-\[639px\]\:text-lg{
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 }
