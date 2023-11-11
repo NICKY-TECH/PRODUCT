@@ -90,7 +90,9 @@ setShow({
                   }}
                 >
                   <img src={item.url} />
-                  <div className="over-lay"></div>
+                  <div className="over-lay" onClick={()=>{
+                    display({ pic: item.parents, id: item.index })
+                  }}></div>
                 </div>
               ) : (
                 <div className="sub-image" key={item.id} id={item.id}>
