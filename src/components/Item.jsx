@@ -7,6 +7,7 @@ function Item (props){
   const totalNumber = useSelector((state) => state.total.value);
   let value =  typeof(totalNumber)==="number";
 function deleteItem(id){
+  props.sound()
   localStorage.removeItem(id)
 
 }

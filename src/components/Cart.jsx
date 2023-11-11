@@ -36,14 +36,14 @@ localStorageArray.map(item => {
   // Perform mapping operations here
   {console.log("value dey")}
   {console.log(item)}
-  return <Item title={item.parsedValue.title} key={item.parsedValue.id} number={item.parsedValue.total} id={item.parsedValue.id}/>
+  return <Item title={item.parsedValue.title} key={item.parsedValue.id} number={item.parsedValue.total} id={item.parsedValue.id} sound={playSound}/>
 }):<p className="cart-empty">Your cart is empty </p>
 }
 
 
         <button className="check-out" onClick={()=>{
-          checkOut,
-          play
+          checkOut(),
+          play()
         }}>Checkout</button>
     
       </article>

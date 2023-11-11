@@ -126,8 +126,8 @@ function Body() {
             <button
               className="add-to-cart"
               onClick={()=>{
-                displayCart;
-                play
+                displayCart();
+                play()
               }}
             >
               <AiOutlineShoppingCart /> Add to cart
